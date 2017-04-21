@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+
+<md-list>
+  <md-list-item class="list-item" *ngFor="let user of users" (click)="showPosts(user.id)">
+    <h3 md-line><b>{{ user.username }}</b></h3>
+    <p md-line>email: <a href="mailto:{{user.email}}" (click)="onEvent($event)">{{ user.email }}</a></p>
+    <p md-line>company: {{ user.company.name }}</p>
+  </md-list-item>
+  <md-nav-list>

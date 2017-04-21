@@ -1,0 +1,12 @@
+<h2 *ngIf="post;">
+  <span class="title">{{title}} on</span>
+  <b>{{post?.body}}</b>
+</h2>
+
+<md-list>
+  <md-list-item class="list-item" *ngFor="let comment of comments">
+    <p md-line><b>{{ comment.name }}</b></p>
+    <p md-line><em>{{ comment.body }}</em></p>
+    <p md-line><a href="mailto:{{comment.email}}">{{ comment.email }}</a></p>
+  </md-list-item>
+<md-list>
