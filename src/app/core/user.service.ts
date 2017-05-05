@@ -1,14 +1,10 @@
 import {Injectable} from '@angular/core';
-import {Headers, Http} from '@angular/http';
+import {Http} from '@angular/http';
+import {User} from './user';
+import {Post} from './post';
+import {Comment} from './comment';
 
 import 'rxjs/add/operator/toPromise';
-
-class User {
-  id: number;
-  username: string;
-  email: string;
-  company: any;
-}
 
 
 @Injectable()
@@ -35,7 +31,7 @@ export class UserService {
 
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json() as User[])
+      .then(response => response.json() as Post[])
       .catch(this.handleError)
   }
   getUsers(): Promise<any> {
@@ -52,7 +48,7 @@ export class UserService {
 
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json() as User[])
+      .then(response => response.json() as Comment[])
       .catch(this.handleError)
   }
 
@@ -61,7 +57,7 @@ export class UserService {
 
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json() as User[])
+      .then(response => response.json() as Post[])
       .catch(this.handleError)
   }
 }
